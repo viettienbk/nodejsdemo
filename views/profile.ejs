@@ -1,0 +1,60 @@
+<!doctype html>
+<html ng-app='app.index'>
+<head>
+    <title>Profile</title>
+    <!-- style -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css"></link>
+    <link rel="stylesheet" href="/assets/css/notes.css" type="text/css"></link>
+    <!-- js -->
+    <script src='/assets/js/angular.min.js'></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src='/assets/js/angular/note.js'></script>
+</head>
+    <body ng-controller='profileController'>
+        <h1>Well come <%= message %></h1>
+        <div>
+            <button class='btn btn-primary btn-lg' ng-click='logout()'>Log out</button>
+        </div>
+        <div>
+            <input class='form-control' type='text' id='name' placeholder='Enter note name'>
+            <button ng-click='createNote()' class='btn btn-primary btn-lg'>Create Note</button>
+        </div>
+        <div class='notes'>
+            <div class='container'>
+                <% for (var i = 0; i < 7 ;i++) { %>
+                    <% if(i % 3 == 0) { %>
+                        <div class='row'>
+                    <% } %>
+                    <div class="col-md-4 note">
+                        <div style="text-align:center" class="panel panel-primary">
+                            <div class="panel-heading">
+                            <h1 class="panel-title text-center">Web y Metrícas</h1>
+                            </div>
+                            <!-- end panel-heading -->
+                            <div class="panel-body">
+                            <p class="text-left lead2">Apoyamos estratégicamente la presencia de tu empresa en el mundo digital, a través de la construcción de recursos web atractivos para tus clientes.</p>
+                            <ul class="text-left">
+                                <li>Web Corporativas</li>
+                                <li>Tiendas Virtuales</li>
+                                <li>Plataformas e-Learning</li>
+                                <li>Arquitectura de Información</li>
+                                <li>Google Analytics, SEO–SEM</li>
+                                <li>Análisis de Competencia Digital</li>
+                                <li>Data Mining</li>
+                            </ul> <a class="btn btn-primary" href="#">Ver más »</a>
+                            </div>
+                            <!-- end panel-body -->
+                        </div>
+                        <!-- end panel-primary -->
+                        </div>
+                        <!--end col-md-4 -->
+                    <% if(i % 3 == 2) { %>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+</div>
+    </body>
+</html>
