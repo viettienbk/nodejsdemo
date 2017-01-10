@@ -5,7 +5,6 @@ module.exports = function(app, passport) {
 
     //  home
     app.get('/', function(req, res) {
-        console.log(req.flash('message'));
         res.render('index', {
             message: req.flash('message')
         });
@@ -17,10 +16,8 @@ module.exports = function(app, passport) {
     });
 
     //  profile
-    app.get('/profile', isLogin, function(req, res) {
-        console.log(req.session.passport.user);
+    app.get('/profile', function(req, res) {
         res.render('profile.ejs', {
-            message: req.session.passport.user.local.username,
             notes: null
         });
     });
@@ -33,7 +30,7 @@ module.exports = function(app, passport) {
     });
 
     //  
-    app.get('/signup', isLogin, function(req, res) {
+    app.get('/signup', function(req, res) {
         res.render('signup.ejs', {
             message: req.flash('message')
         });
