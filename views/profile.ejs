@@ -6,19 +6,16 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css"></link>
     <link rel="stylesheet" href="/assets/css/notes.css" type="text/css"></link>
     <!-- js -->
-    <script src='/assets/js/angular.min.js'></script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-    <script src='/assets/js/angular/note.js'></script>
 </head>
-    <body ng-controller='profileController'>
-        <h1>Well come <%= message %></h1>
+    <body>
         <div>
-            <button class='btn btn-primary btn-lg' ng-click='logout()'>Log out</button>
+            <button class='btn btn-primary btn-lg' onclick='logout()'>Log out</button>
         </div>
         <div>
             <input class='form-control' type='text' id='name' placeholder='Enter note name'>
-            <button ng-click='createNote()' class='btn btn-primary btn-lg'>Create Note</button>
+            <button onclick='createNote()' class='btn btn-primary btn-lg'>Create Note</button>
         </div>
         <div class='notes'>
             <div class='container'>
